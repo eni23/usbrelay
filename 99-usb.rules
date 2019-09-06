@@ -1,0 +1,1 @@
+ACTION=="add", SUBSYSTEM=="tty", ATTRS{idVendor}=="16d0", ATTRS{idProduct}=="087e", ATTRS{product}=="USBrelay", SYMLINK+="relay0"
