@@ -12,6 +12,16 @@ void setup() {
 }
 
 
+
+void print_relay_state(){
+  if (relay_state) {
+    SerialUSB.print("0");
+  } else {
+    SerialUSB.print("1");
+  }
+}
+
+
 void loop() {
   // read serial for relay state
   if ( SerialUSB.available() ) {
@@ -30,14 +40,15 @@ void loop() {
     }
     // 2 = relay toggle
     if ( cdc_input == 50 ) {
-      if (relay_state) {
-        SerialUSB.print("0");
-      } else {
-        SerialUSB.print("1");
-      }
+      print_relay_state();
       digitalWrite( PIN_RELAY, !relay_state );
       relay_state = !relay_state;
     }
+    // 3 = get relay state
+    if ( cdc_input == 51 ) {
+      print_relay_state();
+    }
+
     // 9 = get identification byte, returns 'r' or byte 114
     if ( cdc_input == 57 ){
       SerialUSB.print("r");
