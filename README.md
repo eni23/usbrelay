@@ -1,5 +1,7 @@
 # USBRelay
 
+This is the most simple USB-Relay possible. It Uses an ATTYINY85 Digispark Board and an simple Chinese relay to complete the Task.
+
 ## Protocol
 
 Request: `1x char`
