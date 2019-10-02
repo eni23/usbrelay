@@ -17,3 +17,7 @@ STATE_OFF  = "0" or 0x30
 STATE_ON   = "1" or 0x31
 IDENT      = "r" or 0x72
 ```
+
+## Schematics
+
+![](./doc/schematics.png)
